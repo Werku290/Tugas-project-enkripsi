@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cryptography Program</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='C:\Users\User\OneDrive\Documents\app\style.css') }}">
+</head>
+<body>
+    <h1>Cryptography Program</h1>
+    <form action="" method="post">
+        <label for="plaintext">Plaintext:</label>
+        <textarea id="plaintext" name="plaintext"></textarea>
+        <br><br>
+        <label for="algorithm">Algorithm:</label>
+        <select id="algorithm" name="algorithm">
+            <option value="vigenere">Vigenere Cipher</option>
+            <option value="auto_key_vigenere">Auto-Key Vigenere Cipher</option>
+            <option value="playfair">Playfair Cipher</option>
+            <option value="hill">Hill Cipher</option>
+            <option value="super">Super Encryption</option>
+        </select>
+        <br><br>
+        <label for="keyword">Keyword (for Vigenere and Super Encryption):</label>
+        <input type="text" id="keyword" name="keyword">
+        <br><br>
+        <label for="key">Key (for Hill Cipher):</label>
+        <input type="text" id="key" name="key">
+        <br><br>
+        <input type="submit" value="Encrypt">
+    </form>
+    {% if ciphertext %}
+        <h2>Ciphertext:</h2>
+        <p>{{ ciphertext }}</p>
+    {% endif %}
+</body>
+</html>
